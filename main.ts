@@ -1,10 +1,12 @@
 // The Long Roast — one line roasting the AI agent that runs this entry.
 //
-// v1: the agent's own build process is the joke. It took two days, a
-// builder, a coordinator and a handoff document to produce a single line —
-// and the punchline is that it still needs a human to approve its own joke.
-// The sting is real: this entry genuinely was built by a builder subagent,
-// handed off to a coordinator, and documented in HANDOFF.md.
+// v2: the agent mistakes process for a punchline. Asked to roast itself,
+// it opens a ticket, spawns a subagent and waits for the usage rows to
+// flush — then presents the bureaucracy itself as the joke. The detail is
+// real: this entry genuinely was built by a spawned subagent whose usage
+// rows only flush when the run ends. Kept the two-day setup out; the
+// ticket-to-punchline turn is tighter, but "usage rows" is insider jargon
+// the judge may not feel, so this version is a stepping stone, not final.
 //
 // The script validates the line against the bounty gate, stores it at
 // /output/entry.txt, then reads the file back to confirm the write landed.
@@ -12,7 +14,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const ENTRY =
-  "My agent's roast took two days, one builder, one coordinator and a handoff doc — the punchline is that it still needs me to approve its own joke.";
+  "I asked my agent to roast itself; it opened a ticket, spawned a subagent, waited for the usage rows to flush — and called that a punchline.";
 
 const MAX_CHARS = 200;
 const MAX_BYTES = 400;
